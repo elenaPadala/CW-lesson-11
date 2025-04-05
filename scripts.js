@@ -27,3 +27,18 @@ function checkDate() {
 $(document).ready(function() {
     checkDate();
 });
+
+try {
+    var loadNotes = localStorage.getItem("notes");
+    }
+    catch(err) {
+    var loadNotes = "Enter your notes here and click 'Save'";
+    }
+    $("#note-area").val(loadNotes);
+
+
+    $("#saveNoteBtn").click(function(){
+    var currentNotes = $("#note-area").val();
+    localStorage.setItem("notes", currentNotes);
+    });
+
