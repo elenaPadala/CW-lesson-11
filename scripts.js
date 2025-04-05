@@ -28,4 +28,10 @@ $(document).ready(function() {
     checkDate();
 });
 
+function saveNotes()
+{
+    var notes = $("$notes").val();
+    localStorage.setItem("notes", notes);
+}
+$("#saveNotesButton").click(saveNotes);
 
